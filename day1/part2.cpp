@@ -10,9 +10,9 @@ int main() {
     int count = 0;
     vector<int> arr;
     while (getline(file, x)) {
-        try {
+        if (x != "") {
             count += stoi(x);
-        } catch (std::invalid_argument) {
+        } else {
             arr.push_back(count);
             count = 0;
         }
@@ -25,7 +25,7 @@ int main() {
     sort(arr.begin(), arr.end());
     int vec_size = arr.size();
     for (int i = 1; i <= 3; i++) {
-        cout << arr[vec_size - i] << endl;
+        // cout << arr[vec_size - i] << endl;
         max += arr[vec_size - i];
     }
 
